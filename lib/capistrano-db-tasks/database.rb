@@ -66,7 +66,8 @@ module Database
       if mysql?
         "mysqldump #{credentials} #{database} #{dump_cmd_opts}"
       elsif postgresql?
-        "#{pgpass} pg_dump #{credentials} #{database} #{dump_cmd_opts}"
+        pg_dump_cmd = @cap.fetch(:pg_dump_cmd, 'pg_dump')
+        "#{pgpass} #{pg_dump_cmd} #{credentials} #{database} #{dump_cmd_opts}"
       end
     end
 

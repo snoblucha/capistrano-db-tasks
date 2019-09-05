@@ -55,6 +55,9 @@ set :disallow_pushing, true
 
 # if you prefer bzip2/unbzip2 instead of gzip
 set :compressor, :bzip2
+
+# to use specific command for pg_dump, default 'pg_dump'
+set :pg_dump_cmd, '/usr/pgsql-9.6/bin/pg_dump'
 ```
 
 Add to .gitignore
